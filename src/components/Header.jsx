@@ -13,7 +13,7 @@ function Header() {
           <h1>FRIENDS DATABASE</h1>
         </div>
         <div className="loginFormHeaderButtonDiv">
-        {!isUserLoggedIn  && (<button onClick={()=>history.push(/login)}>LOGIN</button>)}
+        {!isUserLoggedIn  && (<button onClick={()=>history.push('/login')}>LOGIN</button>)}
         {isUserLoggedIn &&(<>
           <button onClick = {() => history.push('/friends')}>FRIENDS LIST</button>
           <button onClick = {() => history.push('/friends/add')}>ADD FRIEND</button>

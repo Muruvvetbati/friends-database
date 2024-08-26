@@ -7,6 +7,7 @@ import FriendsList from './components/FriendsList';
 import AddFriend from './components/AddFriend';
 import { Router, Switch } from 'react-router-dom';
 import AuthContextProvider from './contexts/AuthContext';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   useEffect(() => {
@@ -28,8 +29,16 @@ function App() {
         <LoginForm />
         </Router>
         <Router path = '/header'>
-        
         </Router>
+        <PrivateRoute exact path='/friends'>
+          <FriendsList/>
+        </PrivateRoute>
+        <PrivateRoute exact path='/friends/add'>
+          <AddFriend/>
+        </PrivateRoute>
+        <PrivateRoute exact path='/'>
+          <FriendsList/>
+        </PrivateRoute>
       </Switch>
     
     </div>
